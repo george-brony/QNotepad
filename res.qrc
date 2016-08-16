@@ -6,5 +6,6 @@
         <file>icon/content-save-settings.png</file>
         <file>icon/content-save.png</file>
         <file>icon/file-document.png</file>
+        <file>icon/exit-to-app.png</file>
     </qresource>
 </RCC>
