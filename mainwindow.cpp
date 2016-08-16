@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
- QString copy= "";
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -18,12 +17,21 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionCopy_triggered()
 {
-    copy = ui->textEditor->textCursor().selectedText();
+    QString copy = ui->textEditor->textCursor().selectedText();
+    QApplication::clipboard()->setText(copy);
 }
 
 
 
 void MainWindow::on_actionPaste_triggered()
 {
+    QString copy = QApplication::clipboard()->text();
     ui->textEditor->textCursor().insertText(copy);
+}
+
+void MainWindow::on_actionCut_triggered()
+{
+    QString copy = ui->textEditor->textCursor().selectedText();
+    QApplication::clipboard()->setText(copy);
+    ui->textEditor->textCursor().removeSelectedText();
 }

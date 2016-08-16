@@ -5,6 +5,7 @@
 #include <QFile>
 #include <QFileDialog>
 #include <QDir>
+#include <QClipboard>
 
 namespace Ui {
 class MainWindow;
@@ -19,11 +20,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_actionOpen_triggered();
-
     void on_actionCopy_triggered();
 
     void on_actionPaste_triggered();
+
+    void on_actionCut_triggered();
 
 private:
     Ui::MainWindow *ui;
